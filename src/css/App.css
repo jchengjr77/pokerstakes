@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: antiquewhite;
 }
 
 .App-link {
@@ -32,10 +32,29 @@
   }
 }
 
+html{
+  overscroll-behavior: none;
+  background-color: #282c34;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+#counters-outer {
+  background-color:  #282c34;
+}
+
 .counters-cont {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color:  #282c34;
+}
+
+.player-cont {
+  color: antiquewhite;
+  font-size: 2rem;
 }
 
 .player-box {
@@ -45,4 +64,6 @@
 #whitespace {
   margin-top: 10rem;
   margin-bottom: 3rem;
+  color: antiquewhite;
 }
+

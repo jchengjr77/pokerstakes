@@ -84,7 +84,7 @@ class Counters extends Component {
 
   render() {
     return (
-      <div>
+      <div id="counters-outer">
         <div className="counters-cont">
           <div id="Player 1" className="player-box">
             <Player info={this.state.players[0]} />
@@ -96,7 +96,36 @@ class Counters extends Component {
           </div>
         </div>
         <div id="whitespace">
-          <a href="https://jchengjr77.github.io/mysite/">About JJ Cheng</a>
+          <a
+            href="https://jchengjr77.github.io/mysite/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            About JJ Cheng
+          </a>
+
+          {/* Credits for used assets */}
+
+          <p id="credits">
+            <div>
+              Icons made by{" "}
+              <a href="https://www.freepik.com/" title="Freepik">
+                Freepik
+              </a>{" "}
+              from{" "}
+              <a href="https://www.flaticon.com/" title="Flaticon">
+                www.flaticon.com
+              </a>{" "}
+              is licensed by{" "}
+              <a
+                href="http://creativecommons.org/licenses/by/3.0/"
+                title="Creative Commons BY 3.0"
+                target="_blank"
+              >
+                CC 3.0 BY
+              </a>
+            </div>
+          </p>
         </div>
       </div>
     );
