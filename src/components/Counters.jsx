@@ -76,6 +76,26 @@ class Counters extends Component {
     });
   }
 
+  giveCredit(playerName, credit){
+    let ind = -1;;
+
+    for (let i = 0; i < this.state.players.length; i++) {
+      const curr = this.state.players[i];
+      if (curr.name === playerName) {
+        ind = i;
+        break;
+      }
+    }
+    console.log(ind);
+    if (ind >= -1) {
+      let newPlayers = this.state.players.slice(0);
+      newPlayers[ind].credit += credit;
+      this.setState({
+        players: newPlayers
+      });
+    }
+  }
+
   componentWillMount() {
     this.createNewPlayer("Archit", 100);
     this.createNewPlayer("JJ", 100);
@@ -85,14 +105,16 @@ class Counters extends Component {
   render() {
     return (
       <div id="counters-outer">
-        <div className="counters-cont">
+        <div className="counters-cont" id="counters">
           <div id="Player 1" className="player-box">
             <Player info={this.state.players[0]} />
-            <Button onClick={() => this.placeBet("Archit", 100)}>Bet</Button>
+            <Button className="credit-button" onClick={() => this.placeBet("Archit", 100)}>Bet: -100</Button>
+            <Button className="credit-button" onClick={() => this.giveCredit("Archit", 100)}>Fill: +100</Button>
           </div>
           <div id="Player 2" className="player-box">
             <Player info={this.state.players[1]} />
-            <Button onClick={() => this.placeBet("JJ", 100)}>Bet</Button>
+            <Button className="credit-button" onClick={() => this.placeBet("JJ", 100)}>Bet: -100</Button>
+            <Button className="credit-button" onClick={() => this.giveCredit("JJ", 100)}>Fill: +100</Button>
           </div>
         </div>
         <div id="whitespace">

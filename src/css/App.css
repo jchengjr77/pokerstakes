@@ -41,8 +41,19 @@ body {
   overscroll-behavior: none;
 }
 
+/* Header css */
+ #down-arrow-img {
+   width: auto;
+   height: 5rem;
+ }
+
+/* Counters css */
 #counters-outer {
   background-color:  #282c34;
+}
+
+.credit-button {
+  margin: 1rem;
 }
 
 .counters-cont {
@@ -62,8 +73,10 @@ body {
 }
 
 #whitespace {
-  margin-top: 10rem;
+  margin-top: 15rem;
   margin-bottom: 3rem;
   color: antiquewhite;
 }
+
+
 
