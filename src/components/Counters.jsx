@@ -71,13 +71,16 @@ class Counters extends Component {
     console.log(ind);
     let newPlayers = this.state.players.slice(0);
     newPlayers[ind].credit -= bet;
+    let newPot = this.state.potVal;
+    newPot += bet;
     this.setState({
+      potVal: newPot,
       players: newPlayers
     });
   }
 
-  giveCredit(playerName, credit){
-    let ind = -1;;
+  giveCredit(playerName, credit) {
+    let ind = -1;
 
     for (let i = 0; i < this.state.players.length; i++) {
       const curr = this.state.players[i];
@@ -96,27 +99,61 @@ class Counters extends Component {
     }
   }
 
+  resetPot() {
+    this.setState({
+      potVal: 0
+    })
+  }
+
   componentWillMount() {
-    this.createNewPlayer("Archit", 100);
-    this.createNewPlayer("JJ", 100);
+    this.createNewPlayer("Player 1", 100);
+    this.createNewPlayer("Player 2", 100);
     console.log(this.state);
   }
 
   render() {
     return (
       <div id="counters-outer">
+        <h1 id="pot-display">Pot: {this.state.potVal}</h1>
         <div className="counters-cont" id="counters">
           <div id="Player 1" className="player-box">
             <Player info={this.state.players[0]} />
-            <Button className="credit-button" onClick={() => this.placeBet("Archit", 100)}>Bet: -100</Button>
-            <Button className="credit-button" onClick={() => this.giveCredit("Archit", 100)}>Fill: +100</Button>
+            <Button
+              className="credit-button"
+              color="primary"
+              onClick={() => this.placeBet("Player 1", 100)}
+            >
+              Bet: -100
+            </Button>
+            <Button
+              className="credit-button"
+              color="warning"
+              onClick={() => this.giveCredit("Player 1", 100)}
+            >
+              Fill: +100
+            </Button>
           </div>
           <div id="Player 2" className="player-box">
             <Player info={this.state.players[1]} />
-            <Button className="credit-button" onClick={() => this.placeBet("JJ", 100)}>Bet: -100</Button>
-            <Button className="credit-button" onClick={() => this.giveCredit("JJ", 100)}>Fill: +100</Button>
+            <Button
+              className="credit-button"
+              color="primary"
+              onClick={() => this.placeBet("Player 2", 100)}
+            >
+              Bet: -100
+            </Button>
+            <Button
+              className="credit-button"
+              color="warning"
+              onClick={() => this.giveCredit("Player 2", 100)}
+            >
+              Fill: +100
+            </Button>
           </div>
         </div>
+        <Button onClick={() => (this.resetPot())} color="danger" id="pot-reset">
+          Reset Pot
+        </Button>
         <div id="whitespace">
           <a
             href="https://jchengjr77.github.io/mysite/"

@@ -63,6 +63,18 @@ body {
   background-color:  #282c34;
 }
 
+/* Pot Display css */
+#pot-display {
+  width: auto;
+  height: 4rem;
+  font-size: 4rem;
+  color: antiquewhite;
+}
+
+#pot-reset {
+  width: 20%;
+}
+
 .player-cont {
   color: antiquewhite;
   font-size: 2rem;

@@ -5,7 +5,7 @@ export class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <h1>Poker Stakes</h1>
+        <h1>Heads-Up Poker</h1>
         <p>Virtual Chips counter for games of poker. </p>
         <p>Ideal for when players are actually bored, underpaid interns.</p>
         <a href="#counters">
