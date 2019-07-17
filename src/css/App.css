@@ -75,6 +75,12 @@ body {
   width: 20%;
 }
 
+.win-pot-button {
+  margin: 10px;
+  width: 8rem;
+  height: 3rem;
+}
+
 .player-cont {
   color: antiquewhite;
   font-size: 2rem;
