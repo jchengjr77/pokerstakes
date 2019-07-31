@@ -186,9 +186,6 @@ class Counters extends Component {
             </Button>
           </div>
         </div>
-        <div className="slidecontainer">
-          <input type="range" min="1" max="100" value="50" className="slider"/>
-        </div>
         <Button onClick={() => this.resetPot()} color="danger" id="pot-reset">
           Reset Pot
         </Button>
